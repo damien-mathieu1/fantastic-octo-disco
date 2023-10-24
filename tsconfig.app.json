@@ -1,7 +1,7 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "paths": { "@/*":["./src/*"] },
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx", "src/**/*.json", "src/**/*.wasm", "src/**/*.mjs", "src/**/*.svg", "src/**/*.png", "src/**/*.jpg", "src/**/*.jpeg", "src/**/*.gif", "src/**/*.bmp", "src/**/*.tiff", "src/**/*.webp", "src/**/*.mp4", "src/**/*.webm", "src/**/*.ogg", "src/**/*.mp3", "src/**/*.wav", "src/**/*.flac", "src/**/*.aac", "src/**/*.woff", "src/**/*.woff2", "src/**/*.eot", "src/**/*.ttf", "src/**/*.otf", "src/**/*.css", "src/**/*.scss", "src/**/*.sass", "src/**/*.less", "src/**/*.styl", "src/**/*.html", "src/**/*.md", "src/**/*.markdown", "src/**/*.txt", "src/**/*.yml", "src/**/*.yaml", "src/**/*.xml", "src/**/*.csv", "src/**/*.tsbuildinfo", "src/**/*.env"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,

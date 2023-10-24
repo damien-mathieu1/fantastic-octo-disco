@@ -1,5 +1,15 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
+import { loadLocaleMessages, setI18nLanguage } from "./i18n";
+import { i18n } from "./main";
+
+loadLocaleMessages(i18n, "fr");
+
+const changeLocale = async (locale: string) => {
+  await loadLocaleMessages(i18n, locale);
+  // set i18n language
+  setI18nLanguage(i18n, locale);
+};
 
 const scrollToAnchor = (anchorName: string) => {
   if (anchorName) {
@@ -20,7 +30,7 @@ onMounted(() => {
           (e.pageY - scrollY) +
           "px; left: " +
           (e.pageX - scrollX) +
-          "px; transition: 0.1s ease-out;",
+          "px; transition: 0.1s ease-out;"
       );
     }
   });
@@ -71,14 +81,19 @@ onMounted(() => {
         </ul>
       </div>
     </nav>
+    <div class="locales">
+      <a @click=" changeLocale('en') ">🇬🇧</a>
+      <a @click="changeLocale('ja')">🇯🇵</a>
+      <a @click="changeLocale('fr')">🇫🇷</a>
+    </div>
   </header>
   <div class="title">
     <spline-viewer
       url="https://prod.spline.design/re3Gt8cmnnM08TUA/scene.splinecode"
     ></spline-viewer>
-    <div class="chevron">
-      <span> découvrir plus </span>
-      <font-awesome-icon icon="angle-down" @click="scrollToAnchor('projet')" />
+    <div class="chevron" @click="scrollToAnchor('projet')">
+      <span>{{ $t("discoverMore") }}</span>
+      <font-awesome-icon icon="angle-down"  />
     </div>
   </div>
 
@@ -97,13 +112,29 @@ onMounted(() => {
       </svg>
     </div>
     <div id="projet">
-      <p class="text">Hover over this text to change cursor</p>
+      <p class="text">{{ $t("hello") }}</p>
       <div class="cursor"></div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.locales {
+  top: 0;
+  position: absolute;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.7rem;
+  a {
+    margin: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      scale: 1.2;
+    }
+  }
+}
+
 .chevron {
   display: flex;
   flex-direction: column;
@@ -112,20 +143,15 @@ onMounted(() => {
   align-items: center;
   transform: translateY(-100px);
   z-index: 5;
+  &:hover {
+    svg {
+      scale: 1.2;
+    }
+  }
   svg {
     height: 30px;
     color: white;
-    transition: all 0.05s ease-in-out;
-    &:hover {
-      color: tomato;
-      scale: 1.2;
-      transform: translateY(10px);
-    }
-    &:hover ~ .cursor {
-      transform: scale(6);
-      box-shadow: 0 0 10px #fff;
-      color: #000;
-    }
+    transition: all 0.2s ease-in-out;
   }
 }
 .custom-shape-divider-top-1698099913 {
