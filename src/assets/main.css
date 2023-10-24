@@ -21,6 +21,8 @@
 .cursor {
   position: fixed;
   transform: scale(1);
+  box-shadow: 0px 0px 20px 10px #48abe0;
+  animation: shadows 3s infinite;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -30,6 +32,26 @@
   mix-blend-mode: difference;
   z-index: 10;
 }
+
+@keyframes shadows {
+  0% {
+    text-shadow: #48abe0 0 0 10px;
+    box-shadow: 0px 0px 20px 5px #48abe0;
+  }
+  50% {
+    text-shadow: blueviolet 0 0 10px;
+    box-shadow: 0px 0px 20px 5px blueviolet;
+  }
+  75% {
+    text-shadow: rebeccapurple 0 0 10px;
+    box-shadow: 0px 0px 20px 5px rebeccapuprle;
+  }
+  100% {
+    text-shadow: #48abe0 0 0 10px;
+    box-shadow: 0px 0px 20px 5px #48abe0;
+  }
+}
+
 p:hover ~ .cursor {
   transform: scale(6);
   box-shadow: 0 0 10px #fff;

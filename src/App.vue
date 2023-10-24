@@ -20,7 +20,7 @@ onMounted(() => {
           (e.pageY - scrollY) +
           "px; left: " +
           (e.pageX - scrollX) +
-          "px; transition: 0.2s ease-out;",
+          "px; transition: 0.1s ease-out;",
       );
     }
   });
