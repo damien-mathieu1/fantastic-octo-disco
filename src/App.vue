@@ -1,27 +1,30 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted } from "vue";
 
 const scrollToAnchor = (anchorName: string) => {
   if (anchorName) {
-    let anchorElement = document.getElementById(anchorName)
+    let anchorElement = document.getElementById(anchorName);
     if (anchorElement) {
-      anchorElement.scrollIntoView({ block: 'start', behavior: 'smooth' })
+      anchorElement.scrollIntoView({ block: "start", behavior: "smooth" });
     }
   }
-}
+};
 
 onMounted(() => {
-  const cursor = document.querySelector('.cursor')
-  document.addEventListener('mousemove', (e) => {
-  if (cursor) {
-    cursor.setAttribute(
-      'style',
-      'top: ' + (e.pageY - scrollY) + 'px; left: ' + (e.pageX - scrollX) + 'px; transition: 0.2s ease-out;',
-    )
-  }  
-})
-})
-
+  const cursor = document.querySelector(".cursor");
+  document.addEventListener("mousemove", (e) => {
+    if (cursor) {
+      cursor.setAttribute(
+        "style",
+        "top: " +
+          (e.pageY - scrollY) +
+          "px; left: " +
+          (e.pageX - scrollX) +
+          "px; transition: 0.2s ease-out;",
+      );
+    }
+  });
+});
 </script>
 
 <template>
@@ -62,45 +65,49 @@ onMounted(() => {
           </li>
           <li><a href="#">Info</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="https://erikterwan.com/" target="_blank">Show me more</a></li>
+          <li>
+            <a href="https://erikterwan.com/" target="_blank">Show me more</a>
+          </li>
         </ul>
       </div>
     </nav>
   </header>
   <div class="title">
-    <spline-viewer url="https://prod.spline.design/re3Gt8cmnnM08TUA/scene.splinecode"></spline-viewer>
+    <spline-viewer
+      url="https://prod.spline.design/re3Gt8cmnnM08TUA/scene.splinecode"
+    ></spline-viewer>
     <div class="chevron">
-      <span>
-        découvrir plus
-      </span>
+      <span> découvrir plus </span>
       <font-awesome-icon icon="angle-down" @click="scrollToAnchor('projet')" />
     </div>
   </div>
 
-  
-
   <div class="presentation">
     <div class="custom-shape-divider-top-1698099913">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
-          class="shape-fill"></path>
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
+          class="shape-fill"
+        ></path>
       </svg>
-
     </div>
     <div id="projet">
       <p class="text">Hover over this text to change cursor</p>
       <div class="cursor"></div>
     </div>
   </div>
-
-
 </template>
 
 <style lang="scss" scoped>
 .chevron {
   display: flex;
   flex-direction: column;
-  color:white;
+  color: white;
   justify-content: center;
   align-items: center;
   transform: translateY(-100px);
@@ -266,7 +273,7 @@ a:hover {
          * Transform all the slices of hamburger
          * into a crossmark.
          */
-#menuToggle input:checked~span {
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
@@ -275,7 +282,7 @@ a:hover {
 /*
          * But let's hide the middle one.
          */
-#menuToggle input:checked~span:nth-last-child(3) {
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -283,7 +290,7 @@ a:hover {
 /*
          * Ohyeah and the last one should go the other direction
          */
-#menuToggle input:checked~span:nth-last-child(2) {
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -317,7 +324,7 @@ a:hover {
 /*
          * And let's slide it in from the left
          */
-#menuToggle input:checked~ul {
+#menuToggle input:checked ~ ul {
   transform: none;
 }
 
@@ -345,4 +352,5 @@ a:hover {
 
 .onclick-menu-content li {
   list-style: none;
-}</style>
+}
+</style>

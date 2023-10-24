@@ -1,12 +1,13 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { createApp } from "vue";
+import App from "./App.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
-library.add(faAngleDown)
+library.add(faAngleDown);
 
-const app = createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+const app = createApp(App)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount("#app");
