@@ -110,9 +110,8 @@ onMounted(() => {
         ></path>
       </svg>
     </div>
-    <div id="projet">
-      <p class="text">{{ $t("hello") }}</p>
-      <div class="cursor"></div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <h1 style="font-size: 3rem; color: white;" >{{ $t("presTitle") }}</h1>
     </div>
   </div>
 </template>
@@ -175,7 +174,7 @@ onMounted(() => {
   background-color: #161616;
   height: 100vh;
   width: 100%;
-  z-index: 6;
+  z-index: 2;
 }
 
 .title {
@@ -230,20 +229,9 @@ a:hover {
   position: absolute;
   top: 20px;
   left: 20px;
-  border: solid white 1px;
   padding: 20px;
   z-index: 1;
-
-  -webkit-user-select: none;
-  user-select: none;
-
-  &:hover {
-    background-color: #232323;
-    border: solid white 1px;
-    border-radius: 40px;
-  }
-
-  transition: all 0.7s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #menuToggle input {
