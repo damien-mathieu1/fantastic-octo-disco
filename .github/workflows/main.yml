@@ -17,9 +17,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - uses: oven-sh/setup-bun@v1
       with:
-        node-version: '10.x'
+        bun-version: latest
     - run: bun install
     - run: bun run build
     - name: Deploy 🚀
