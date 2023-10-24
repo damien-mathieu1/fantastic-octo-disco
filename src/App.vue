@@ -88,9 +88,8 @@ onMounted(() => {
     </div>
   </header>
   <div class="title">
-    <spline-viewer
-      url="https://prod.spline.design/re3Gt8cmnnM08TUA/scene.splinecode"
-    ></spline-viewer>
+    <spline-viewer url="https://prod.spline.design/re3Gt8cmnnM08TUA/scene.splinecode"></spline-viewer>
+
     <div class="chevron" @click="scrollToAnchor('projet')">
       <span>{{ $t("discoverMore") }}</span>
       <font-awesome-icon icon="angle-down"  />
@@ -176,6 +175,7 @@ onMounted(() => {
   background-color: #161616;
   height: 100vh;
   width: 100%;
+  z-index: 6;
 }
 
 .title {
