@@ -20,8 +20,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: npm install
-    - run: npm run build
+    - run: bun install
+    - run: bun run build
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
