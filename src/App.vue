@@ -27,10 +27,10 @@ onMounted(() => {
       cursor.setAttribute(
         "style",
         "top: " +
-          (e.pageY - scrollY) +
-          "px; left: " +
-          (e.pageX - scrollX) +
-          "px; transition: 0.1s ease-out;"
+        (e.pageY - scrollY) +
+        "px; left: " +
+        (e.pageX - scrollX) +
+        "px; transition: 0.1s ease-out;"
       );
     }
   });
@@ -62,16 +62,11 @@ onMounted(() => {
         but hey, it's pure CSS magic.
         -->
         <ul id="menu">
-          <li><a href="#">Home</a></li>
-          <li class="">
-            <div tabindex="0" class="onclick-menu">
-              About
-              <ul class="onclick-menu-content">
-                <li><a href="#">Sub-1</a></li>
-                <li><a href="#">Sub-2</a></li>
-                <li><a href="#">Sub-3</a></li>
-              </ul>
-            </div>
+          <li @click="scrollToAnchor('pres')">
+            <p>{{ $t("presTitle") }}</p>
+          </li>
+          <li @click="scrollToAnchor('skills')">
+            <p> {{ $t("skills") }}</p>
           </li>
           <li><a href="#">Info</a></li>
           <li><a href="#">Contact</a></li>
@@ -82,7 +77,7 @@ onMounted(() => {
       </div>
     </nav>
     <div class="locales">
-      <a @click=" changeLocale('en') ">🇬🇧</a>
+      <a @click=" changeLocale('en')">🇬🇧</a>
       <a @click="changeLocale('ja')">🇯🇵</a>
       <a @click="changeLocale('fr')">🇫🇷</a>
     </div>
@@ -90,28 +85,21 @@ onMounted(() => {
   <div class="title">
     <spline-viewer url="https://prod.spline.design/re3Gt8cmnnM08TUA/scene.splinecode"></spline-viewer>
 
-    <div class="chevron" @click="scrollToAnchor('projet')">
+    <div class="chevron" @click="scrollToAnchor('pres')">
       <span>{{ $t("discoverMore") }}</span>
-      <font-awesome-icon icon="angle-down"  />
+      <font-awesome-icon icon="angle-down" />
     </div>
   </div>
 
-  <div class="presentation">
-    <div class="custom-shape-divider-top-1698099913">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z"
-          class="shape-fill"
-        ></path>
-      </svg>
+  <div class="section">
+    <div id="pres" style="display: flex; align-items: center; justify-content: center;">
+      <h1 style="font-size: 3rem; color: white;">{{ $t("presTitle") }}</h1>
     </div>
-    <div style="display: flex; align-items: center; justify-content: center;">
-      <h1 style="font-size: 3rem; color: white;" >{{ $t("presTitle") }}</h1>
+  </div>
+
+  <div class="section">
+    <div id="skills" style="display: flex; align-items: center; justify-content: center;">
+      <h1 style="font-size: 3rem; color: white;">{{ $t("skills") }}</h1>
     </div>
   </div>
 </template>
@@ -124,9 +112,11 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   font-size: 1.7rem;
+
   a {
     margin: 0.5rem;
     transition: all 0.3s ease-in-out;
+
     &:hover {
       scale: 1.2;
     }
@@ -141,23 +131,33 @@ onMounted(() => {
   align-items: center;
   transform: translateY(-100px);
   z-index: 5;
+
   &:hover {
     svg {
       scale: 1.2;
     }
   }
+
   svg {
     height: 30px;
     color: white;
     transition: all 0.2s ease-in-out;
   }
 }
+
+.custom-shape-divider-top-1698099914 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
 .custom-shape-divider-top-1698099913 {
   width: 100%;
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
 }
+
 
 .custom-shape-divider-top-1698099913 svg {
   position: relative;
@@ -167,19 +167,22 @@ onMounted(() => {
 }
 
 .custom-shape-divider-top-1698099913 .shape-fill {
-  fill: #020202;
+  fill: #000000;
 }
 
-.presentation {
+.section {
   background-color: #161616;
-  height: 100vh;
-  width: 100%;
+  width: 80%;
   z-index: 2;
+  height: 100vh;
+  margin-bottom: 4rem;
+  border-radius: 50%;
 }
 
 .title {
   min-height: 100vh;
   color: white;
+  width: 100%;
 
   span {
     display: flex;
@@ -287,7 +290,7 @@ a:hover {
          * Transform all the slices of hamburger
          * into a crossmark.
          */
-#menuToggle input:checked ~ span {
+#menuToggle input:checked~span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
@@ -296,7 +299,7 @@ a:hover {
 /*
          * But let's hide the middle one.
          */
-#menuToggle input:checked ~ span:nth-last-child(3) {
+#menuToggle input:checked~span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -304,7 +307,7 @@ a:hover {
 /*
          * Ohyeah and the last one should go the other direction
          */
-#menuToggle input:checked ~ span:nth-last-child(2) {
+#menuToggle input:checked~span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -338,7 +341,7 @@ a:hover {
 /*
          * And let's slide it in from the left
          */
-#menuToggle input:checked ~ ul {
+#menuToggle input:checked~ul {
   transform: none;
 }
 
@@ -366,5 +369,4 @@ a:hover {
 
 .onclick-menu-content li {
   list-style: none;
-}
-</style>
+}</style>
