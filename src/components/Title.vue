@@ -26,7 +26,10 @@ onMounted(() => {
       mode: "no-cors",
     })
     .then(() => {
-      load.value = true;
+        setTimeout(() => {
+            load.value = true;
+        }, 1000);
+      
     });
 });
 
