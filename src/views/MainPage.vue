@@ -4,8 +4,7 @@ import BottomShapeDivider from "@/components/utilities/BottomShapeDivider.vue";
 import Header from "@/components/Header.vue";
 import Title from "@/components/Title.vue";
 import styled from "vue3-styled-components";
-import '@splidejs/splide/dist/css/splide.min.css';
-
+import "@splidejs/splide/dist/css/splide.min.css";
 
 const Section = styled.section`
   background-color: #272829;
@@ -18,6 +17,15 @@ const SectionInner = styled.div`
   display: flex;
   padding: 5rem;
   flex-direction: column;
+`;
+
+const TitleH1 = styled.h1`
+  font-size: 4rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 7%;
+  font-style: italic;
 `;
 
 const TextWrapper = styled.p`
@@ -34,18 +42,10 @@ const ContentWrapper = styled.div`
 `;
 
 const ProjectCard = styled.div`
-  background-color: #272829;
-  border: solid white 1px;
+  background-color: black;
+  width: 100vh;
+  height: 100vh;
   color: white;
-  max-width: 100%;
-  overflow: hidden;
-  mix-blend-mode: difference;
-  height: 300px;
-  :hover {
-    mix-blend-mode: normal;
-  }
-  transition: all 1s ease-in-out;
-
 `;
 </script>
 
@@ -55,17 +55,13 @@ const ProjectCard = styled.div`
   <Section id="pres">
     <TopShapeDivider />
     <SectionInner>
-      <h1
-        style="
-          font-size: 5rem;
-          color: rgb(255, 255, 255);
-          font-family: &quot;Mea Culpa&quot;, cursive;
-          font-weight: 600;
-          margin-bottom: 7%;
-        "
+      <TitleH1
+        data-aos="fade-down"
+        data-aos-duration="500"
+        data-aos-delay="200"
       >
         {{ $t("presTitle") }}
-      </h1>
+      </TitleH1>
       <ContentWrapper
         data-aos="fade-down"
         data-aos-duration="500"
@@ -98,49 +94,46 @@ const ProjectCard = styled.div`
   <Section id="skills">
     <TopShapeDivider />
     <SectionInner>
-      <h1
-        style="
-          font-size: 5rem;
-          color: rgb(255, 255, 255);
-          font-family: &quot;Mea Culpa&quot;, cursive;
-          font-weight: 600;
-          margin-bottom: 7%;
-        "
+      <TitleH1
+        data-aos="fade-down"
+        data-aos-duration="500"
+        data-aos-delay="200"
       >
         {{ $t("skills") }}
-      </h1>
+      </TitleH1>
       <ContentWrapper
         data-aos="fade-down"
         data-aos-duration="500"
         data-aos-delay="200"
       >
-        <div>
-          <Splide :options="{ autoplay:true, rewind: true,type   : 'loop',
-  perPage: 3,
-  focus  : 'center', interval: 1800, pauseOnHover: true }">
-            <SplideSlide style="background-color: #272829;  transition: all 1s ease-in-out;
-">
-              <ProjectCard>
-                <TextWrapper>
-                  Projet 1
-                </TextWrapper>
+        <Splide
+          :options="{
+            autoplay: true,
+            rewind: true,
+            type: 'loop',
+            direction: 'ttb',
+            height: '10rem',
+            interval: 1800,
+            pauseOnHover: true,
+          }"
+        >
+          <SplideSlide>
+            <ProjectCard><TitleH1> eVote </TitleH1> </ProjectCard>
+          </SplideSlide>
+          <SplideSlide>
+            <ProjectCard><TitleH1> FakeX </TitleH1> </ProjectCard>
+          </SplideSlide>
+          <SplideSlide>
+            <ProjectCard>
+              <div style="display: flex;">
+                <TitleH1> ePortfolio </TitleH1> <TitleH1>Test</TitleH1>
+              </div>
               </ProjectCard>
-            </SplideSlide>
-            <SplideSlide style="background-color: #272829;   transition: all 1s ease-in-out;">
-              <ProjectCard >
-                <TextWrapper>
-                  Projet 2
-                </TextWrapper>
-              </ProjectCard>
-            </SplideSlide>
-            <SplideSlide style="background-color: #272829;   transition: all 1s ease-in-out;">
-              <ProjectCard>
-                Projet 3
-              </ProjectCard>
-            </SplideSlide>
-          </Splide>
-        </div>
-        
+          </SplideSlide>
+          <SplideSlide>
+            <ProjectCard><TitleH1> PortfolioV2 </TitleH1> </ProjectCard>
+          </SplideSlide>
+        </Splide>
       </ContentWrapper>
     </SectionInner>
     <BottomShapeDivider />
@@ -149,7 +142,7 @@ const ProjectCard = styled.div`
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .section {
   background-color: #272829;
   width: 100%;
