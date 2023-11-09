@@ -7,5 +7,12 @@
   "presentation": {
     "myself": "Je m'appelle Damien, j'ai 21 ans et je suis un développeur full stack depuis 1an.",
     "moreAbtMe": "Je suis actuellement en BUT Informatique en 3ème année en alternance et je fais principalement du développement web (React/Vue) dans le cadre de l'alternance. Je fais également du développement bas niveau (C,Rust) ainsi que de la virtualisation (Docker, Kubernetes)."
-  }
+  },
+  "project": "Projets",
+  "fakeX": "Site de e-commerce réalisé en PHP - 2022",
+  "technos": "Technos :",
+  "links": "Liens :",
+  "eVote": "Plateforme de vote en ligne réalisé en Java - 2022",
+  "portfolioV2": "Portfolio réalisé en Vue.JS - 2023",
+  "rickypedia": "Site répertoriant tous les personnage de Rick & Morty réalisé en React.JS/GraphQL - 2022"
 }

@@ -7,5 +7,12 @@
   "presentation": {
     "myself": "私の名前はダミアン、21歳、フルスタック開発者歴1年です。",
     "moreAbtMe": "現在BUT Informatiqueというワーホリプログラムの3年目で、ワーホリプログラムの一環として主にWeb開発（React/Vue）をやっています。また、低レベルの開発（C、Rust）や仮想化（Docker、Kubernetes）も行っています。"
-  }
+  },
+  "project": "プロジェクト",
+  "fakeX": "PHP eコマース・ウェブサイト - 2022",
+  "technos": "テクノロジー",
+  "links": "リンク",
+  "eVote": "Javaで構築されたオンライン投票プラットフォーム - 2022",
+  "portfolioV2": "Vue.JSで作成されたポートフォリオ - 2023",
+  "rickypedia": "React.JS/GraphQLで作成されたリック・アンド・モーティの全キャラクター一覧のウェブサイト - 2022"
 }

@@ -7,5 +7,12 @@
   "presentation": {
     "myself": "My name is Damien, I'm 21 and I've been a full stack developer for 1 year.",
     "moreAbtMe": "I'm currently in my 3rd year of a work-study program called BUT Informatique and I'm mainly doing web development (React/Vue) as part of my work-study program. I also do low-level development (C,Rust) and virtualization (Docker, Kubernetes)."
-  }
+  },
+  "project": "Projects",
+  "fakeX": "PHP e-commerce site - 2022",
+  "technos": "Technos :",
+  "links": "Links :",
+  "eVote": "Java-based online voting platform - 2022",
+  "portfolioV2": "Vue.JS portfolio - 2023",
+  "rickypedia": "Website listing all Rick & Morty characters built in React.JS/GraphQL - 2022"
 }
