@@ -1,5 +1,4 @@
 <template>
-  <Loading v-if="load === false" />
   <div class="title">
     <canvas width="100%" height="100%" style="position: relative" id="canvas3d">
     </canvas>
