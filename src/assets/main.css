@@ -33,7 +33,7 @@ a {
   height: 8px;
   border-radius: 50%;
   background: #fff;
-  transition: all 0.2s ease-in- !important;
+  transition: all 0.2s cubic-bezier(.26,.58,.73,.72) !important;
   pointer-events: none;
   mix-blend-mode: difference;
   z-index: 20;
