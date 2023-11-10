@@ -9,6 +9,7 @@ import { setupI18n } from "./i18n";
 //@ts-ignore
 import AOS from "aos";
 import "aos/dist/aos.css";
+//@ts-ignore
 import VueSplide from "@splidejs/vue-splide";
 
 library.add(faAngleDown);
