@@ -17,6 +17,9 @@ const SectionInner = styled.div`
   display: flex;
   padding: 5rem;
   flex-direction: column;
+  @media (max-width: 1100px) {
+    padding: 2rem;
+  }
 `;
 
 const TitleH1 = styled.h1`
@@ -26,6 +29,9 @@ const TitleH1 = styled.h1`
   font-family: "Roboto", sans-serif;
   margin-bottom: 7%;
   font-style: italic;
+  @media (max-width: 1100px) {
+    font-size: 2rem;
+  }
 `;
 
 const TextWrapper = styled.p`
@@ -36,11 +42,39 @@ const TextWrapper = styled.p`
 
 const ContentWrapper = styled.div`
   display: flex;
-  margin-bottom: 40px;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
+const AboutText = styled.p`
+  max-width: 30%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+  @media (max-width: 1100px) {
+    max-width: 90%;
+    margin: 0;
+    & > p {
+      text-align: center;
+      line-height: normal;
+      text-align: start;
+    }
+  }
+`;
+
+const ResponsiveImg = styled.img`
+  max-width: 100%;
+  height: auto;
+  @media (max-width: 1100px) {
+    max-width: 90%;
+  }
+`;
 </script>
 
 <template>
@@ -52,7 +86,7 @@ const ContentWrapper = styled.div`
       <TitleH1
         data-aos="fade-down"
         data-aos-duration="500"
-        data-aos-delay="200"
+        data-aos-delay="100"
       >
         {{ $t("presTitle") }}
       </TitleH1>
@@ -61,24 +95,15 @@ const ContentWrapper = styled.div`
         data-aos-duration="500"
         data-aos-delay="200"
       >
-        <div
-          style="
-            max-width: 30%;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            margin: 3rem;
-          "
-        >
-          <TextWrapper style="color: white; line-height: 2em">{{
+        <AboutText>
+          <TextWrapper>{{
             $t("presentation.myself")
           }}</TextWrapper>
           <br />
           <TextWrapper>{{ $t("presentation.moreAbtMe") }}</TextWrapper>
-        </div>
+        </AboutText>
         <div style="max-width: 40%">
-          <img src="../assets/takumi-chilling.gif" height="300" />
+          <ResponsiveImg src="../assets/takumi-chilling.gif" height="300" />
         </div>
       </ContentWrapper>
     </SectionInner>
@@ -95,11 +120,7 @@ const ContentWrapper = styled.div`
       >
         {{ $t("skills") }}
       </TitleH1>
-      <ContentWrapper
-        data-aos="fade-down"
-        data-aos-duration="500"
-        data-aos-delay="200"
-      >
+      <ContentWrapper>
         <ProjectSlider />
       </ContentWrapper>
     </SectionInner>

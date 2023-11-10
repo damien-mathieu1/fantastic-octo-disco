@@ -22,4 +22,6 @@ const app = createApp(App)
   .use(VueSplide)
   .mount("#app");
 
-AOS.init();
+AOS.init({
+  once: true,
+});
